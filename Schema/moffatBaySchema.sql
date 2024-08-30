@@ -4,9 +4,12 @@ use moffatbay;
 
 create table customer(
                          customerID int auto_increment primary key,
-                         email varchar(254),
+                         email varchar(255),
                          password varchar(255),
                          name varchar(255),
+                         address varchar(255),
+                         zipcode varchar(10),
+                         state varchar(30),
                          creation datetime
 );
 create table reservation(
@@ -21,14 +24,12 @@ create table reservation(
 );
 
 
-insert into customer (email, password, name, creation) values
-                                                 ('test@test.com', 'apassword', 'Tester', '2024-08-10 08:10:53'),
-                                                 ('anotherTester@test.com', 'somePassword', 'TestGuy', '2024-08-15 08:15:56'),
-                                                 ('justatest@test.com', 'thatsapass', 'Steven Jobs', '2024-08-16 10:50:16');
+insert into customer (email, password, name, creation, address,zipcode,state) values
+                                                                                  ('test@test.com', 'apassword', 'Tester', now(), '309 Some Road', '33333', 'SC'),
+                                                                                  ('anotherTester@test.com', 'somePassword', 'TestGuy', now(),'111 East Road', '11111', 'NC'),
+                                                                                  ('justatest@test.com', 'thatsapass', 'Steven Jobs',now() ,'156 West Road', '30888', 'MA');
 
 insert into reservation (startDate, endDate, lodge, guests, customerID, creation) values
                                                                                       ('2025-06-22','2025-06-23', 'queen', 5, 1, '2024-8-24 05:02:03'),
-                                                                                      ('2025-01-11', '2025-01-11', 'king', 2, 2, '2024-8-22 14:06:56'),
-                                                                                      ('2025-03-15', '2025-03-16','Double Full', 3, 3, '2024-8-23 19:58:00');
-select * from customer;
-select * from reservation;
+                                                                                      ('2025-01-11', '2025-01-11', 'king', 2, 1, '2024-8-22 14:06:56'),
+                                                                                      ('2025-03-15', '2025-03-16','Double Full', 3, 1, '2024-8-23 19:58:00');
