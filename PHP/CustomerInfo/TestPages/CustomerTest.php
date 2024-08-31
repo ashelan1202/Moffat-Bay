@@ -1,6 +1,7 @@
 <?php
-include "Customer.php";
-$customer = new Customer();
+include "../Customer.php";
+session_start();
+
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
@@ -48,10 +49,15 @@ $customer = new Customer();
 <?php
 
 if(isset($_REQUEST['submit'])) {
-    if($_REQUEST['selection'] == "login") {
+    $_SESSION["customer"] = new Customer();
+    if ($_REQUEST['selection'] == "login") {
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
-        $customer->login($email, $password);
+        $loggedIn = $_SESSION["customer"]->login($email, $password);
+        if (!$loggedIn[0]) {
+            session_unset();
+            print($loggedIn[1]);
+        }
     } elseif ($_REQUEST['selection'] == "register") {
         $email = $_REQUEST['email'];
         $password = $_REQUEST['password'];
@@ -60,9 +66,23 @@ if(isset($_REQUEST['submit'])) {
         $city = $_REQUEST['city'];
         $zipcode = $_REQUEST['zipcode'];
         $state = $_REQUEST['state'];
-        $customer->register($email, $password, $name, $addLine, $city, $zipcode, $state);
-    }
+        $register = $_SESSION["customer"]->register($email, $password, $name, $addLine, $city, $zipcode, $state);
+        if (!$register[0]) {
+            if (is_array($register[1])) {
+                foreach ($register[1] as $error) {
+                    print("$error <br>");
+                }
+            } else {
+                print("$register[1]");
+            }
+            unset($_SESSION["customer"]);
+        }
 
+    }
+}
+?>
+<?php
+    if(isset($_SESSION['customer'])) {
 ?>
 <table>
 
@@ -74,14 +94,15 @@ if(isset($_REQUEST['submit'])) {
     <th>Address</th>
     </tr>
     <tr>
-        <?php $address = $customer->getFullAddress();?>
-        <td><?php echo $customer->getName()?></td>
-        <td><?php echo $customer->getEmail()?></td>
-        <td><?php echo $customer->getCreation()?></td>
-        <td><?php echo $customer->getCustomerID()?></td>
+        <?php $address = $_SESSION["customer"]->getFullAddress();?>
+        <td><?php echo $_SESSION["customer"]->getName()?></td>
+        <td><?php echo $_SESSION["customer"]->getEmail()?></td>
+        <td><?php echo $_SESSION["customer"]->getCreation()?></td>
+        <td><?php echo $_SESSION["customer"]->getCustomerID()?></td>
         <td><?php echo "$address[0], $address[1], $address[2], $address[3]"?></td>
     </tr>
 </table>
+    <a href="VerificationTest.php">Link test</a>
 <?php
 }
 ?>
