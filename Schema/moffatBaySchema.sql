@@ -8,6 +8,7 @@ create table customer(
                          password varchar(255),
                          name varchar(255),
                          address varchar(255),
+                         city varchar(255),
                          zipcode varchar(10),
                          state varchar(30),
                          creation datetime
@@ -24,10 +25,10 @@ create table reservation(
 );
 
 
-insert into customer (email, password, name, creation, address,zipcode,state) values
-                                                                                  ('test@test.com', 'apassword', 'Tester', now(), '309 Some Road', '33333', 'SC'),
-                                                                                  ('anotherTester@test.com', 'somePassword', 'TestGuy', now(),'111 East Road', '11111', 'NC'),
-                                                                                  ('justatest@test.com', 'thatsapass', 'Steven Jobs',now() ,'156 West Road', '30888', 'MA');
+insert into customer (email, password, name, creation, address,city,zipcode,state) values
+                                                                                  ('test@test.com', 'apassword', 'Tester', now(), '309 Some Road', '33333','Acity','SC'),
+                                                                                  ('anotherTester@test.com', 'somePassword', 'TestGuy', now(),'111 East Road','testCity', '11111', 'NC'),
+                                                                                  ('justatest@test.com', 'thatsapass', 'Steven Jobs',now() ,'156 West Road','SomeCity', '30888', 'MA');
 
 insert into reservation (startDate, endDate, lodge, guests, customerID, creation) values
                                                                                       ('2025-06-22','2025-06-23', 'queen', 5, 1, '2024-8-24 05:02:03'),
