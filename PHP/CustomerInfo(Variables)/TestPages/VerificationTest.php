@@ -8,7 +8,7 @@ if(!isset($_SESSION['customerId'])){
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Samuel Table 2!</title>
+    <title>Session Verification</title>
     <style>
         body{
             text-align: center;

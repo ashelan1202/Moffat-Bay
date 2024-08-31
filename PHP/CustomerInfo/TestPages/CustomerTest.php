@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>Samuel Table 2!</title>
+    <title>Customer Test</title>
     <style>
         body{
             text-align: center;
