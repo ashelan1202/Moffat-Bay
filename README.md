@@ -5,3 +5,4 @@ Github Repository for CSD460 Capstone in Software Development
 * Professor Sue Sampson
 * Ashley Landin
 * Samuel Segars
+* Rogelio Orozco
