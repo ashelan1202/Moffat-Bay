@@ -26,9 +26,9 @@ create table reservation(
 
 
 insert into customer (email, password, name, creation, address,city,zipcode,state) values
-                                                                                  ('test@test.com', 'apassword', 'Tester', now(), '309 Some Road', '33333','Acity','SC'),
-                                                                                  ('anotherTester@test.com', 'somePassword', 'TestGuy', now(),'111 East Road','testCity', '11111', 'NC'),
-                                                                                  ('justatest@test.com', 'thatsapass', 'Steven Jobs',now() ,'156 West Road','SomeCity', '30888', 'MA');
+                                                                                  ('test@test.com', '$2y$10$gddaYyFfHSkqwwsxxGbm/Oe1SehSPsjj5P7hDWN5EZeV6yhf5Gfle', 'Tester', now(), '309 Some Road', '33333','Acity','SC'),
+                                                                                  ('anotherTester@test.com', '$2y$10$uF4AHhIpY141WJtlGzOkXOB02pXF5nOhPgiR.A4iOMsOtR.icVYy.', 'TestGuy', now(),'111 East Road','testCity', '11111', 'NC'),
+                                                                                  ('justatest@test.com', '$2y$10$LB37TByyJGEBY8awsu2sy.zUa/hux9QhX5boJ9j1zOqU53hHwzGY6', 'Steven Jobs',now() ,'156 West Road','SomeCity', '30888', 'MA');
 
 insert into reservation (startDate, endDate, lodge, guests, customerID, creation) values
                                                                                       ('2025-06-22','2025-06-23', 'queen', 5, 1, '2024-8-24 05:02:03'),
