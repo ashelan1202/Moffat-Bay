@@ -1,6 +1,7 @@
 body{
     margin:0;
     padding: 0;
+    background-color: #F5EFE6;
 }
 #topnav {
     display: flex;
@@ -26,7 +27,7 @@ body{
 }
 #brand h2{
     vertical-align: center;
-    line-height: .19px;
+    line-height: 0;
     color: #F5EFE6;
 }
 
@@ -90,11 +91,55 @@ body{
 .hidden{
     margin-right: auto;
 }
-#sidebar .links{
+ .links{
     text-align: center;
 }
-#sidebar .link{
+.link{
     text-decoration: none;
     cursor: pointer;
     color: #F5EFE6;
 }
+ .link h2, .link p{
+    margin-top:  0;
+    margin-bottom: 0;
+}
+ #footer{
+     display: flex;
+     background-color: #1A4D2E;
+     margin-top: auto;
+     position:fixed;
+     left:0;
+     bottom:0;
+     height:auto;
+     width:100%;
+     justify-content: space-between;
+     color: #F5EFE6;
+     align-content: center;
+     text-align: center;
+ }
+ #contact-us{
+     margin-left: auto;
+     align-content: center;
+     padding-right: 15px;
+
+ }
+ #newsletter{
+     margin-left: auto;
+     margin-right: auto;
+ }
+ #footerLinks {
+     margin-right: auto;
+ }
+ #footerLinks{
+    padding-left: 15px;
+ }
+ #newsletter p, #newsletter h2{
+     margin-bottom: 0;
+ }
+ #newsletter form *{
+     margin-top: 0;
+     margin-bottom: 5px;
+ }
+ #newsletter p{
+     margin-top: 5px;
+ }
