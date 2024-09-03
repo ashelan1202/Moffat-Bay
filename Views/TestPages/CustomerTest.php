@@ -10,17 +10,15 @@ $_SESSION["test"] = true;
         form, h1, #verify{
             text-align: center;
             margin: auto;
-            width:50%
         }
         .flex-container{
             text-align: center;
-            margin: auto;
-            width:50%
+            width:50%;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
+            margin: auto auto 10px;
         }
         table, th, td {
             margin-left: auto;
@@ -29,21 +27,32 @@ $_SESSION["test"] = true;
             border-collapse: collapse;
         }
     </style>
+<script>
+    let reg = document.getElementById("reg");
+    function regShow() {
+        document.getElementById("reg").style.visibility= 'visible';
+        document.getElementById("reg").style.height='auto';
+    }
+    function regHide(){
+        document.getElementById("reg").style.visibility = 'hidden';
+        document.getElementById("reg").style.height='0';
+    }
+</script>
 <?php require_once "../templates/_navbar.php" ?>
 <h1>Test Page Login/ Register</h1>
 <form name="form" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <div class="flex-container">
-        <div class="flex-child"><label>Login<input type="radio" name="selection" value="login" onclick="document.getElementById('reg').style.visibility ='hidden'" checked="checked"/></label></div>
-        <div class="flex-child"><label>Register<input type="radio" name="selection" value="register" onclick="document.getElementById('reg').style.visibility='visible'"/></label></div>
+        <div class="flex-child"><label>Login<input type="radio" name="selection" value="login" onclick="regHide()" checked="checked"/></label></div>
+        <div class="flex-child"><label>Register<input type="radio" name="selection" value="register" onclick="regShow()"/></label></div>
     </div>
-        <label>Email<input type="text" name="email" /></label><br>
-        <label>Password<input type="text" name="password" /></label>
-    <div id="reg" style="visibility: hidden" >
-        <label> Name:<input type="text" name="name" </label><br>
-        <label>Address Line:<input type="text" name="addLine" </label><br>
-        <label>City:<input type="text" name="city"</label><br>
-        <label>Zipcode:<input type="text" name="zipcode"</label><br>
-        <label>State:<input type="text" name="state" </label><br>
+        <p><label>Email:<input type="email" name="email" /></label></p>
+        <p><label>Password:<input type="password" name="password" /></label></p>
+    <div id="reg" style="height:0; visibility: hidden" >
+        <p><label> Name:<input type="text" name="name" </label></p>
+        <p><label>Address Line:<input type="text" name="addLine" </label></p>
+        <p><label>City:<input type="text" name="city"</label></p>
+        <p><label>Zipcode:<input type="text" name="zipcode"</label></p>
+        <p><label>State:<input type="text" name="state" </label></p>
     </div>
     <input type="submit" name="submit"/>
 </form>
@@ -58,6 +67,8 @@ if(isset($_REQUEST['submit'])) {
         if (!$loggedIn[0]) {
             session_unset();
             print($loggedIn[1]);
+        } else{
+            header("location: VerificationTest.php");
         }
     } elseif ($_REQUEST['selection'] == "register") {
         $email = $_REQUEST['email'];
@@ -81,32 +92,4 @@ if(isset($_REQUEST['submit'])) {
 
     }
 }
-?>
-<?php
-    if(isset($_SESSION['customer'])) {
-    $_SESSION['test'] = true;
-?>
-<table>
-
-    <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Creation</th>
-    <th>Customer ID</th>
-    <th>Address</th>
-    </tr>
-    <tr>
-        <?php $address = $_SESSION["customer"]->getFullAddress();?>
-        <td><?php echo $_SESSION["customer"]->getName()?></td>
-        <td><?php echo $_SESSION["customer"]->getEmail()?></td>
-        <td><?php echo $_SESSION["customer"]->getCreation()?></td>
-        <td><?php echo $_SESSION["customer"]->getCustomerID()?></td>
-        <td><?php echo "$address[0], $address[1], $address[2], $address[3]"?></td>
-    </tr>
-</table>
-    <a id="verify" href="VerificationTest.php">Link test</a>
-<?php
-}
-?>
-</body>
-</html>
+require_once "../templates/_footer.php";

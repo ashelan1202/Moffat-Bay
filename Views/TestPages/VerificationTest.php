@@ -24,6 +24,9 @@ if(!isset($_SESSION['customer'])){
             border: 1px solid;
             border-collapse: collapse;
         }
+        #logout{
+            text-align: center;
+        }
     </style>
     <?php require_once "../templates/_navbar.php" ?>
 <h1>Test Page Verification</h1>
@@ -46,6 +49,6 @@ if(!isset($_SESSION['customer'])){
             <td><?php echo "$address[0], $address[1], $address[2], $address[3]"?></td>
         </tr>
     </table>
-<a href="../../models/logout.php">Sign Out</a>
-</body>
-</html>
+    <div id="logout"><a href="<?php echo models?>logout.php"><button>Sign Out</button></a></div>
+<?php
+require_once "../templates/_footer.php";
