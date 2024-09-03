@@ -1,19 +1,22 @@
 <?php
-include "../Customer.php";
-session_start();
+const Customer = "../../models/CustomerInfo/Customer.php";
+require Customer;
+$title = "Verification";
+require_once "../templates/_header.php";
 if(!isset($_SESSION['customer'])){
     header("location: CustomerTest.php");
 }
+
 ?>
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <title>Session Verification</title>
     <style>
-        body{
+        h1, input{
             text-align: center;
             margin: auto;
             width:50%
+        }
+        input{
+            align-content: center;
+            width:auto;
         }
         table, th, td{
             margin-left: auto;
@@ -22,8 +25,7 @@ if(!isset($_SESSION['customer'])){
             border-collapse: collapse;
         }
     </style>
-</head>
-<body>
+    <?php require_once "../templates/_navbar.php" ?>
 <h1>Test Page Verification</h1>
 
     <table>
@@ -44,6 +46,6 @@ if(!isset($_SESSION['customer'])){
             <td><?php echo "$address[0], $address[1], $address[2], $address[3]"?></td>
         </tr>
     </table>
-<input type="button" value="Logout" onclick="<?php session_destroy();?> document.location.href='CustomerTest.php'">
+<a href="../../models/logout.php">Sign Out</a>
 </body>
 </html>

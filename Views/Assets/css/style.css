@@ -1,0 +1,100 @@
+body{
+    margin:0;
+    padding: 0;
+}
+#topnav {
+    display: flex;
+    background-color: #1A4D2E;
+    height: 46px;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+#topnav a img, #topnav a{
+    height: 40px;
+}
+#home{
+    margin-right: auto;
+}
+#brand{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-content: center;
+}
+#brand h2{
+    vertical-align: center;
+    line-height: .19px;
+    color: #F5EFE6;
+}
+
+#sidebarButton img{
+    margin-left: auto;
+    background: transparent none;
+    color:white;
+    border: none;
+    height: 46px;
+    font-size:200%;
+    cursor: pointer;
+}
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #1A4D2E;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0;
+    color:#F5EFE6;
+
+}
+#sidebarButton{
+    margin-left: auto;
+    margin-right: 1%;
+}
+#closeButton{
+    top: 0;
+    right: 25px;
+    font-size: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    color: white;
+}
+#closeButton img{
+    height: 36px;
+    cursor: pointer;
+}
+#sidebarBrand{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+#sidebarBrand img{
+    height: 40px;
+}
+#sidebarBrand h4{
+    vertical-align: center;
+    color: #F5EFE6;
+    margin-top: 7%
+
+}
+#sidebarTop{
+    top: 0;
+    display: flex;
+}
+.hidden{
+    margin-right: auto;
+}
+#sidebar .links{
+    text-align: center;
+}
+#sidebar .link{
+    text-decoration: none;
+    cursor: pointer;
+    color: #F5EFE6;
+}

@@ -1,36 +1,37 @@
 <?php
-include "../Customer.php";
-session_start();
+const Customer = "../../models/CustomerInfo/Customer.php";
+require Customer;
+$title = "Customer Test";
+require_once "../templates/_header.php";
+$_SESSION["test"] = true;
 
 ?>
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <title>Customer Test</title>
     <style>
-        body{
+        form, h1, #verify{
             text-align: center;
             margin: auto;
             width:50%
         }
         .flex-container{
+            text-align: center;
+            margin: auto;
+            width:50%
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
         }
-        table, th, td{
+        table, th, td {
             margin-left: auto;
             margin-right: auto;
             border: 1px solid;
             border-collapse: collapse;
         }
     </style>
-</head>
-<body>
+<?php require_once "../templates/_navbar.php" ?>
 <h1>Test Page Login/ Register</h1>
-<form name="form" action="<?php echo $_SERVER['PHP_SELF'];?>">
+<form name="form" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>">
     <div class="flex-container">
         <div class="flex-child"><label>Login<input type="radio" name="selection" value="login" onclick="document.getElementById('reg').style.visibility ='hidden'" checked="checked"/></label></div>
         <div class="flex-child"><label>Register<input type="radio" name="selection" value="register" onclick="document.getElementById('reg').style.visibility='visible'"/></label></div>
@@ -83,6 +84,7 @@ if(isset($_REQUEST['submit'])) {
 ?>
 <?php
     if(isset($_SESSION['customer'])) {
+    $_SESSION['test'] = true;
 ?>
 <table>
 
@@ -102,7 +104,7 @@ if(isset($_REQUEST['submit'])) {
         <td><?php echo "$address[0], $address[1], $address[2], $address[3]"?></td>
     </tr>
 </table>
-    <a href="VerificationTest.php">Link test</a>
+    <a id="verify" href="VerificationTest.php">Link test</a>
 <?php
 }
 ?>
