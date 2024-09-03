@@ -7,7 +7,7 @@ $_SESSION["test"] = true;
 
 ?>
     <style>
-        form, h1, #verify{
+        form, h1{
             text-align: center;
             margin: auto;
         }
