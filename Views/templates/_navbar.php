@@ -1,8 +1,9 @@
 <?php
-const links = "../Assets/links/";
-const images = "/Moffat-Bay/Views/Assets/images/";
-const views = "/Moffat-Bay/Views/";
-const models = "/Moffat-Bay/models/";
+define("links", $repRoot . "/Views/Assets/links/");
+define("images", $repRoot . "/Views/Assets/images/");
+define("views", $repRoot."Views/");
+
+define("models", $repRoot . "/models/");
 
 if(isset($_SESSION["test"]) and $_SESSION["test"]) {
     require links."TestPageLinks.php";

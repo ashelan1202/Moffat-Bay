@@ -2,6 +2,7 @@
 const Customer = "../../models/CustomerInfo/Customer.php";
 require Customer;
 $title = "Verification";
+$repRoot = "../../";
 require_once "../templates/_header.php";
 if(!isset($_SESSION['customer'])){
     header("location: CustomerTest.php");

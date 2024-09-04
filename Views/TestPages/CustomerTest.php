@@ -2,6 +2,7 @@
 const Customer = "../../models/CustomerInfo/Customer.php";
 require Customer;
 $title = "Customer Test";
+$repRoot = "../../";
 require_once "../templates/_header.php";
 $_SESSION["test"] = true;
 

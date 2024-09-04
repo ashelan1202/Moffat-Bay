@@ -1,7 +1,7 @@
 <?php
 session_start();
-const css = "/Moffat-Bay/Views/Assets/css/";
-const js = "/Moffat-Bay/Views/Assets/js/";
+define("css", $repRoot . "/Views/Assets/css/");
+define("js", $repRoot . "/Views/Assets/js/");
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
