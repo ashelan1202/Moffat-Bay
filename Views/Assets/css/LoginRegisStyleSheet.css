@@ -1,0 +1,32 @@
+body {
+    background-image: url("LodgeLake.jpeg");
+    background-color: rgba(245, 239, 230, 0.3);
+}
+h2{
+    text-decoration-color: black;
+}
+h4{
+    text-decoration-color: black;
+}
+h5{
+    text-decoration-color: darkslategrey;
+}
+.signUp p{
+    width: 25%;
+    background-color: #F5EFE6;
+    padding: 5%;
+}
+.logIn p{
+    width: 65%;
+    background-color: #F5EFE6;
+    padding: 5%;
+}
+button{
+    background-color: lightslategray;
+    text-decoration-color: black;
+}
+button:hover{
+    background-color: lightsteelblue;
+    text-decoration-color: white;
+    text-decoration: underline;
+}
