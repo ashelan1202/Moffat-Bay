@@ -74,3 +74,6 @@ button{
     height: 30px;
     border-width: 1px;
 }
+#loginErrMsg, #regErrMsg{
+    color: red;
+}
