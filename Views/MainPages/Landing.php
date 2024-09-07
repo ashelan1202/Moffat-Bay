@@ -24,7 +24,7 @@ require_once "../templates/_navbar.php";
         <div class="card-container">
 
             <div class="card">
-                <a href="<?php echo $pages['Test Page']?>">
+                <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
                     <img src="<?= images ?>icon.png" alt="Hiking">
                 </div>
@@ -33,7 +33,7 @@ require_once "../templates/_navbar.php";
             </div>
 
             <div class="card">
-                <a href="<?php echo $pages['Test Page']?>">
+                <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
                     <img src="<?= images ?>icon.png" alt="Whale Watching">
                 </div>
@@ -41,7 +41,7 @@ require_once "../templates/_navbar.php";
                 </a>
             </div>
             <div class="card">
-                <a href="<?php echo $pages['Test Page']?>">
+                <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
                     <img src="<?= images ?>icon.png" alt="Scuba Diving">
                 </div>
@@ -49,7 +49,7 @@ require_once "../templates/_navbar.php";
                 </a>
             </div>
             <div class="card">
-                <a href="<?php echo $pages['Test Page']?>">
+                <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
                     <img src="<?= images ?>icon.png" alt="Kayaking">
                 </div>
