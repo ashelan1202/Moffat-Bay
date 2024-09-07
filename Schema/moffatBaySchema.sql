@@ -7,10 +7,6 @@ create table customer(
                          email varchar(255),
                          password varchar(255),
                          name varchar(255),
-                         address varchar(255),
-                         city varchar(255),
-                         zipcode varchar(10),
-                         state varchar(30),
                          creation datetime
 );
 create table rooms(
@@ -33,10 +29,10 @@ create table reservation(
 
 
 
-insert into customer (email, password, name, creation, address,city,zipcode,state) values
-                                                                                  ('test@test.com', '$2y$10$gddaYyFfHSkqwwsxxGbm/Oe1SehSPsjj5P7hDWN5EZeV6yhf5Gfle', 'Tester', now(), '309 Some Road', '33333','Acity','SC'),
-                                                                                  ('anotherTester@test.com', '$2y$10$uF4AHhIpY141WJtlGzOkXOB02pXF5nOhPgiR.A4iOMsOtR.icVYy.', 'TestGuy', now(),'111 East Road','testCity', '11111', 'NC'),
-                                                                                  ('justatest@test.com', '$2y$10$LB37TByyJGEBY8awsu2sy.zUa/hux9QhX5boJ9j1zOqU53hHwzGY6', 'Steven Jobs',now() ,'156 West Road','SomeCity', '30888', 'MA');
+insert into customer (email, password, name, creation) values
+                                                                                  ('test@test.com', '$2y$10$gddaYyFfHSkqwwsxxGbm/Oe1SehSPsjj5P7hDWN5EZeV6yhf5Gfle', 'Tester', now()),
+                                                                                  ('anotherTester@test.com', '$2y$10$uF4AHhIpY141WJtlGzOkXOB02pXF5nOhPgiR.A4iOMsOtR.icVYy.', 'TestGuy', now()),
+                                                                                  ('justatest@test.com', '$2y$10$LB37TByyJGEBY8awsu2sy.zUa/hux9QhX5boJ9j1zOqU53hHwzGY6', 'Steven Jobs',now());
 insert into rooms(roomSize, price) values
                                     ('Double Full', 155),
                                     ('King', 155),

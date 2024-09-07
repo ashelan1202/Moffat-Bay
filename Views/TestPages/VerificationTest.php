@@ -4,9 +4,6 @@ require Customer;
 $title = "Verification";
 $repRoot = "../../";
 require_once "../templates/_header.php";
-if(!isset($_SESSION['customer'])){
-    header("location: CustomerTest.php");
-}
 
 ?>
     <style>
@@ -29,7 +26,12 @@ if(!isset($_SESSION['customer'])){
             text-align: center;
         }
     </style>
-    <?php require_once "../templates/_navbar.php" ?>
+    <?php
+require_once "../templates/_navbar.php";
+
+if(!isset($_SESSION['customer'])){
+    header("location: {$views}MainPages/LoginRegis.php");
+}?>
 <h1>Test Page Verification</h1>
 
     <table>
@@ -39,17 +41,14 @@ if(!isset($_SESSION['customer'])){
             <th>Email</th>
             <th>Creation</th>
             <th>Customer ID</th>
-            <th>Address</th>
         </tr>
         <tr>
-            <?php $address = $_SESSION["customer"]->getFullAddress();?>
             <td><?php echo $_SESSION["customer"]->getName()?></td>
             <td><?php echo $_SESSION["customer"]->getEmail()?></td>
             <td><?php echo $_SESSION["customer"]->getCreation()?></td>
             <td><?php echo $_SESSION["customer"]->getCustomerID()?></td>
-            <td><?php echo "$address[0], $address[1], $address[2], $address[3]"?></td>
         </tr>
     </table>
-    <div id="logout"><a href="<?php echo models?>logout.php"><button>Sign Out</button></a></div>
+    <div id="logout"><a href="<?php echo controller?>logout.php"><button>Sign Out</button></a></div>
 <?php
 require_once "../templates/_footer.php";
