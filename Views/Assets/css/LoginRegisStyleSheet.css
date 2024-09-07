@@ -1,0 +1,79 @@
+body {
+    background-image: url("../images/lodgelake.jpeg");
+    background-size: cover;
+    padding-bottom: 150px;
+}
+h2{
+    text-decoration-color: black;
+}
+h4{
+    text-decoration-color: black;
+}
+h5{
+    text-decoration-color: darkslategrey;
+}
+#flex{
+    display: flex;
+    justify-content: center;
+    div{
+        margin-top: 10%;
+    }
+}
+.signUp {
+    background-color: rgba(245, 239, 230, 75%);
+    margin-right: auto;
+    margin-left: 5%;
+    width: 15%;
+    padding: 0 5% 1% 5%;
+    text-align: center;
+    p{
+        color: gray;
+        margin-bottom: 0;
+    }
+}
+#passwordReq{
+    text-align: left;
+    margin-top: 0;
+}
+h5{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.logIn {
+    background-color: rgba(245, 239, 230, 75%);
+    margin-left:auto;
+    padding: 0 5% 1% 5%;
+    margin-right: 5%;
+    width:15%;
+    text-align: center;
+    h2{
+        margin-top: 25%;
+    }
+
+}
+
+
+.submit:hover{
+    background-color: lightsteelblue;
+    text-decoration-color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+input[type=text], input[type=email], input[type=password]{
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 15px;
+    border-width: 1px;
+}
+button{
+    background-color: lightslategray;
+    text-decoration-color: black;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    border-width: 1px;
+}
+#loginErrMsg, #regErrMsg{
+    color: red;
+}

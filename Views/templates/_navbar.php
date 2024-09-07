@@ -1,15 +1,11 @@
 <?php
 define("links", $repRoot . "/Views/Assets/links/");
 define("images", $repRoot . "/Views/Assets/images/");
-define("views", $repRoot."Views/");
+define("views", $repRoot."/Views/");
 
-define("models", $repRoot . "/models/");
+define("controller", $repRoot . "/controller/");
 
-if(isset($_SESSION["test"]) and $_SESSION["test"]) {
-    require links."TestPageLinks.php";
-} else{
-    require links."links.php";
-}
+require links."links.php";
 ?>
 </head>
 <body>
@@ -33,7 +29,7 @@ if(isset($_SESSION["test"]) and $_SESSION["test"]) {
         }
         if(isset($_SESSION['customer'])){
             ?>
-            <a class="link" href="<?php echo models?>logout.php"><h2>Logout</h2></a>
+            <a class="link" href="<?php echo controller?>logout.php"><h2>Logout</h2></a>
             <?php
         }
         ?>

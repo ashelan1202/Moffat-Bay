@@ -29,36 +29,26 @@ class Customer
     }
     public function checkPassword($password): array
     {
-        $passwordChecks = [preg_match(".[A-Z].", $password ), preg_match(".[a-z].", $password ), strlen($password) > 8];
-        if($passwordChecks[0]and $passwordChecks[1] and $passwordChecks[2]){
+        $passwordChecks = ["upper" => preg_match(".[A-Z].", $password ),"lower" => preg_match(".[a-z].", $password ),"length" => strlen($password) > 8];
+        if($passwordChecks["upper"]and $passwordChecks["lower"] and $passwordChecks["length"]){
             return [true, "Password check successful"];
         } else {
-            $required = [];
-            if (!$passwordChecks[0]) {
-                $required[] = "Must contain at least one uppercase letter";
-            }
-            if (!$passwordChecks[1]) {
-                $required[] = "Must contain at least one lowercase letter";
-            }
-            if (!$passwordChecks[2]) {
-                $required[] = "Must contain at least 8 characters";
-            }
-            return [false, $required];
-        }
+                    return [false, $passwordChecks];
+                }
     }
-    public function register($email, $password, $name, $address, $city,$zipcode, $state): array
+    public function register($email, $password, $name): array
     {
         if($this->checkEmail($email)) {
             $check = $this->checkPassword($password);
             if ($check[0]) {
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                 $customerQuery = new CustomerQuery();
-                $registered = $customerQuery->register($email, $passwordHash, $name, $address, $city, $zipcode, $state);
+                $registered = $customerQuery->register($email, $passwordHash, $name);
                 if ($registered[0]) {
                     $this->login($email, $password);
                     return [true, "Login Successful"];
                 } else {
-                    return [false, "$registered[1]"];
+                    return [false, $registered[1]];
                 }
             } else {
                 return $check;
@@ -76,10 +66,6 @@ class Customer
         }
         public function getCreation(){
         return $this->creation;
-        }
-        public function getFullAddress(){
-            $CustomerQuery = new CustomerQuery();
-            return $CustomerQuery->getFullAddress($this->customerID)[1];
         }
 
     }

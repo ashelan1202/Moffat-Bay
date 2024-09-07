@@ -31,15 +31,15 @@ class CustomerQuery{
             return false;
         }
     }
-    public function register($email, $password, $name, $address, $city,$zipcode, $state){
+    public function register($email, $password, $name): array
+    {
         try{
             $conn = new mysqli($this->host, $this->username, $this->password, $this->database);
             $sql = "SELECT email from customer WHERE email = '$email'";
             $result = $conn->query($sql);
-            $result = $result->fetch_all();
-            if(!$result) {
-                $sql = "INSERT INTO customer (email, password, name, address, city, zipcode, state, creation) 
-                    VALUES ('$email', '$password', '$name', '$address', '$city', '$zipcode', '$state', now())";
+            if(mysqli_num_rows($result) == 0) {
+                $sql = "INSERT INTO customer (email, password, name, creation) 
+                    VALUES ('$email', '$password', '$name', now())";
                 return [true, $conn->query($sql)];
             } else{
                 return [false, "Email already exists"];
@@ -49,22 +49,6 @@ class CustomerQuery{
             return [false,"Error while registering"];
         }
 
-    }
-            public function getFullAddress($customerID){
-            try {
-                $conn = new mysqli($this->host, $this->username, $this->password, $this->database);
-                $sql = "SELECT address,city,state,zipcode FROM customer WHERE customerID = '$customerID'";
-                $result = $conn->query($sql);
-                $result = $result->fetch_all();
-                if (isset($result[0])){
-                    return [true,$result[0]];
-                } else{
-                    return [false,"Error getting full address"];
-                }
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-                return [false,"Error getting full address"];
-            }
     }
 
 }
