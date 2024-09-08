@@ -67,19 +67,20 @@
 
 .image-crop {
     width: 100%;
-    padding-top: 75%; /* Aspect ratio */
+    padding-bottom: 75%;
     overflow: hidden;
-    border-radius: 50%;
     position: relative;
+    border-radius: 50%;
 }
 
 .image-crop img {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
-    height: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
 
 .card p {

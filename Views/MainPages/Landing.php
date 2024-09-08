@@ -10,13 +10,13 @@ require_once "../templates/_header.php";
 require_once "../templates/_navbar.php";
 ?>
     <div class="container1">
-        <img src="<?= images ?>lodge2.avif" alt="Lodge Image" class="full-width-img">
+        <img src="<?= images ?>lodge_text.png" alt="Lodge Image" class="full-width-img">
     </div>
 
     <div class="container2">
         <h2>About Us</h2>
         <p> The Moffat Bay Lodge is the  best place to stay to embark on adventures your family is sure to remember. Our staff is always on stand-by to provide best in class hospitality and help ensure your stay is one for the books.</p>
-        <a href="<?php echo $home?>" class="btn">Book Today</a>
+        <a href="<?php echo $pages["Booking"]?>" class="btn">Book Today</a>
     </div>
 
     <div class="container3">
@@ -26,7 +26,7 @@ require_once "../templates/_navbar.php";
             <div class="card">
                 <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
-                    <img src="<?= images ?>icon.png" alt="Hiking">
+                    <img src="<?= images ?>hiking_rsz.jpg" alt="Hiking">
                 </div>
                 <p>Hiking</p>
                 </a>
@@ -35,7 +35,7 @@ require_once "../templates/_navbar.php";
             <div class="card">
                 <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
-                    <img src="<?= images ?>icon.png" alt="Whale Watching">
+                    <img src="<?= images ?>whale_rsz.jpg" alt="Whale Watching">
                 </div>
                 <p>Whale Watching</p>
                 </a>
@@ -43,7 +43,7 @@ require_once "../templates/_navbar.php";
             <div class="card">
                 <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
-                    <img src="<?= images ?>icon.png" alt="Scuba Diving">
+                    <img src="<?= images ?>diving.jpg" alt="Scuba Diving">
                 </div>
                 <p>Scuba Diving</p>
                 </a>
@@ -51,7 +51,7 @@ require_once "../templates/_navbar.php";
             <div class="card">
                 <a href="<?php echo $pages["Attractions"]?>">
                 <div class="image-crop">
-                    <img src="<?= images ?>icon.png" alt="Kayaking">
+                    <img src="<?= images ?>kayak_rsz.jpg" alt="Kayaking">
                 </div>
                 <p>Kayaking</p>
                 </a>
