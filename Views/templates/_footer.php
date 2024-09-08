@@ -5,7 +5,7 @@
 <?php
         foreach($pages as $key => $value){
             if($key != $title){
-                echo "<a class=\"link\" href=\"".$value."\"><p>".$key."</p></a><br>";
+                echo "<a class=\"link\" href=\"".$value."\"><p>".$key."</p></a>";
             }
         }
         ?>

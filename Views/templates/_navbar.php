@@ -1,9 +1,9 @@
 <?php
-define("links", $repRoot . "/Views/Assets/links/");
-define("images", $repRoot . "/Views/Assets/images/");
-define("views", $repRoot."/Views/");
+define("links", $repRoot . "Views/Assets/links/");
+define("images", $repRoot . "Views/Assets/images/");
+define("views", $repRoot."Views/");
 
-define("controller", $repRoot . "/controller/");
+define("controller", $repRoot . "controller/");
 
 require links."links.php";
 ?>
