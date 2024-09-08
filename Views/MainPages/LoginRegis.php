@@ -20,8 +20,8 @@ if (isset($_SESSION["regError"])) {
     <h4>First time visitor? Create an account below to book with us!</h4>
     <p id="regErrMsg"></p>
     <form method="post" action="../../controller/login.php">
-        <input type="text" id="name" name="name" placeholder="Full Name"><br>
-        <input type="email" id="email" name="email" placeholder="Email Address"><br>
+        <input type="text" id="name" name="name" placeholder="Full Name" required><br>
+        <input type="email" id="email" name="email" placeholder="Email Address" required><br>
 
     <h5>Password must contain:</h5>
     <ul id="passwordReq">
@@ -29,7 +29,7 @@ if (isset($_SESSION["regError"])) {
         <li id="upper">1 Uppercase Letter</li>
         <li id="lower">1 Lowercase Letter</li>
     </ul>
-        <input type="password" id="password" name="password" placeholder="Password"><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
         <button type="submit" class="submit" name="submit" value="signup">Sign Up</button><br>
     </form>
     <p>By Signing up you agree to our terms and conditions</p>
@@ -45,8 +45,8 @@ if (isset($_SESSION["regError"])) {
         unset($_SESSION["loginError"]);
         }?></p>
     <form method="post" action="../../controller/login.php">
-        <input type="email" id="email" name="email" placeholder="Email"><br>
-        <input type="password" id="password" name="password" placeholder="Password"><br>
+        <input type="email" id="email" name="email" placeholder="Email" required><br>
+        <input type="password" id="password" name="password" placeholder="Password" required><br>
         <button type="submit" class="submit" name="submit" value="signin">Sign In</button><br>
     </form>
     <h5>Forgot your password?</h5>
