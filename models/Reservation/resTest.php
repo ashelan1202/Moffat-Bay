@@ -10,14 +10,24 @@ $results = $resQuery ->resLookup(1,"test@test.com")[1];
 foreach ($results[0] as $value){
     echo "$value<br>";
 }
-$startDate = strtotime("05-10-2026");
-print("<br>".$startDate."<br>");
-$startDate = date("Y-m-d", $startDate);
-echo "<br>".$startDate."<br>";
-$endDate = strtotime("05-11-2026");
-$endDate = date("Y-m-d", $endDate);
-$results = $resQuery ->resInsert(1,5,1,$startDate,$endDate);
-echo $results[1];
+?>
+<br>
+<hr>
+<form method="post">
+<input type="date" name="startDate">
+<input type="date" name="endDate">
+<input type="submit" name="submit">
+</form>
+
+<?php
+if(isset($_POST["submit"])) {
+    $startDate = $_POST["startDate"];
+    $endDate = $_POST["endDate"];
+    $results = $resQuery->resInsert(1, 5, 1, $startDate, $endDate);
+    echo $results[1];
+    unset($_POST["startDate"], $_POST["endDate"], $_POST["submit"]);
+    //header('Location: ' . $pages["Landing Page"] );
+}
 ?>
 <input type="date" min="<?php date('Y/m/d')?>"  required>
 <?php
