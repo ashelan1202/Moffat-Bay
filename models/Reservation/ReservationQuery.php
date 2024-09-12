@@ -19,9 +19,6 @@ class ReservationQuery
 
     public function resInsert($customerId, $guests, $roomId, $startDate, $endDate){
         try{
-        $sql = "SELECT price from rooms where roomId = '$roomId'";
-            $result = $this->conn->query($sql);
-
         $sql = "INSERT INTO reservation (customerId, guests, roomId, startDate, endDate, creation, totalPrice)".
                         "VALUES ($customerId, $guests, $roomId,'$startDate', '$endDate', NOW(), (DATEDIFF('$endDate','$startDate') * (SELECT price from rooms where roomId = '$roomId')))";
         $result = $this->conn->query($sql);
@@ -44,6 +41,7 @@ class ReservationQuery
                                                                                           " join moffatbay.customer c on c.customerID = reservation.customerID" .
                                                                                           " join moffatbay.rooms r on r.roomId = reservation.roomId".
                                                                                           " where ReservationID = $reservationID and c.email = '$email'";
+
             $result = $this->conn->query($sql);
             $result = $result->fetch_all();
             if (!isset($result[0])) {
