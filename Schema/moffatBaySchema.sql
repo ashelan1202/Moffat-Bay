@@ -34,10 +34,10 @@ insert into customer (email, password, name, creation) values
                                                                                   ('anotherTester@test.com', '$2y$10$uF4AHhIpY141WJtlGzOkXOB02pXF5nOhPgiR.A4iOMsOtR.icVYy.', 'TestGuy', now()),
                                                                                   ('justatest@test.com', '$2y$10$LB37TByyJGEBY8awsu2sy.zUa/hux9QhX5boJ9j1zOqU53hHwzGY6', 'Steven Jobs',now());
 insert into rooms(roomSize, price) values
-                                    ('Double Full', 155),
-                                    ('King', 155),
-                                    ('Queen', 130),
-                                    ('Double Queen', 145);
+                                    ('Double Full', 120.75),
+                                    ('King', 162.75),
+                                    ('Queen', 136.5),
+                                    ('Double Queen', 152.25);
 
 insert into reservation (startDate, endDate, roomId, guests,totalPrice, customerID, creation) values
                                                                                       ('2025-06-22','2025-06-23', 3, 5, 130, 1,'2024-8-24 05:02:03'),
