@@ -21,9 +21,14 @@ class ReservationQuery
         try{
         $sql = "INSERT INTO reservation (customerId, guests, roomId, startDate, endDate, creation, totalPrice)".
                         "VALUES ($customerId, $guests, $roomId,'$startDate', '$endDate', NOW(), (DATEDIFF('$endDate','$startDate') * (SELECT price from rooms where roomId = '$roomId')))";
-        $result = $this->conn->query($sql);
-        if($result) {
-            return [true, "Reservation Successfully Booked"];
+        $this->conn->query($sql);
+        $id = $this->conn->insert_id;
+        $sql = "SELECT email FROM customer WHERE customerId = '$customerId'";
+        $result =$this->conn->query($sql);
+        $row = $result->fetch_row();
+        if($row) {
+            echo $id;
+            return [true, $id, $row[0]];
         } else {
             return [false, "Error while booking reservation"];
         }
@@ -34,24 +39,24 @@ class ReservationQuery
     }
 
 
-    public function resLookup($reservationID, $email)
+    public function resLookup($reservationID, $email):array
     {
         try {
-            $sql = "select r.roomSize, c.name, reservation.guests, reservation.startDate, reservation.endDate from reservation" .
-                                                                                          " join moffatbay.customer c on c.customerID = reservation.customerID" .
-                                                                                          " join moffatbay.rooms r on r.roomId = reservation.roomId".
+            $sql = "select ro.roomSize, c.name, re.guests, re.startDate, re.endDate, re.creation from reservation re" .
+                                                                                          " join moffatbay.customer c on c.customerID = re.customerID" .
+                                                                                          " join moffatbay.rooms ro on ro.roomId = re.roomId".
                                                                                           " where ReservationID = $reservationID and c.email = '$email'";
 
             $result = $this->conn->query($sql);
-            $result = $result->fetch_all();
-            if (!isset($result[0])) {
-                return [false, "Invalid Login"];
+            $result = $result->fetch_assoc();
+            if (!$result) {
+                return [false, "Invalid Reservation"];
             } else {
                 return [true, $result];
             }
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
-            return false;
+            return [false];
         }
     }
 }
