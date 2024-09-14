@@ -3,11 +3,10 @@ $repRoot = "../../";
 include "Reservation.php";
 require_once "{$repRoot}Views/templates/_header.php";
 require_once "{$repRoot}Views/templates/_navbar.php";
-?>
-<?php
-$res = new Reservation();
-$res->lookup(1,"test@test.com");
 
+$_SESSION["res"] = new Reservation();
+$_SESSION["res"]->lookup(1,"test@test.com");
+//header("location:".views."/MainPages/ReserveSummary.php");
 ?>
 <table>
     <tr>
@@ -20,13 +19,13 @@ $res->lookup(1,"test@test.com");
         <th>Creation</th>
     </tr>
     <tr>
-        <td><?php echo $res->getId()?></td>
-        <td><?php echo $res->getStartDate()?></td>
-        <td><?php echo $res->getEndDate()?></td>
-        <td><?php echo $res->getRoomSize()?></td>
-        <td><?php echo $res->getCustName()?></td>
-        <td><?php echo $res->getGuests()?></td>
-        <td><?php echo $res->getCreation()?></td>
+        <td><?php echo $_SESSION["res"]->getId()?></td>
+        <td><?php echo $_SESSION["res"]->getStartDate()?></td>
+        <td><?php echo $_SESSION["res"]->getEndDate()?></td>
+        <td><?php echo $_SESSION["res"]->getRoomSize()?></td>
+        <td><?php echo $_SESSION["res"]->getCustName()?></td>
+        <td><?php echo $_SESSION["res"]->getGuests()?></td>
+        <td><?php echo $_SESSION["res"]->getCreation()?></td>
     </tr>
 </table>
 <br>

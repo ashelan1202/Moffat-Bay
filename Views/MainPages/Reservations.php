@@ -34,4 +34,10 @@ if (isset($_SESSION["regError"])) {
 
 
 <?php
+
 require_once "../templates/_footer.php";
+if (isset($_SESSION["submit"])) {
+    $res = new Reservation();
+    $res ->newRes($_POST["guests"],$_POST["startDate"],$_POST["endDate"],$_POST["roomId"],$_SESSION["customer"]->getCustomerId());
+    header("location: ReserveSummary.php");
+}

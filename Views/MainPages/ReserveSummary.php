@@ -1,28 +1,32 @@
 <?php
 $title="Lodge Reservation Summary Page";
 $repRoot="../../";
-
+include($repRoot."models/Reservation/Reservation.php");
 require_once "../templates/_header.php";
+
 ?>
 
     <link rel="stylesheet" href="../Assets/css/ReserveSummaryStylesheet.css">
 <?php
 require_once "../templates/_navbar.php";
-if (isset($_SESSION["regError"])) {
-    regCheck();
+if(!isset($_SESSION["res"])){
+    header("location:Landing.php");
 }
 ?>
 
 <div id="sum">
     <h2>Your Reservation has been Confirmed!</h2>
     <h4>Reservation Summary:</h4>
-    <ul>
-        <li>Confirmation Number:</li>
-        <li>Name:</li>
-        <li>Lodge:</li>
-        <li>Number of Guests:</li>
-        <li>Dates Reserved:</li>
-    </ul>
+    <div style="display: inline-block; text-align: center;">
+        <ul>
+            <li>Confirmation Number: <?php echo $_SESSION["res"]->getId();?></li>
+            <li>Name: <?php echo $_SESSION["res"]->getCustName();?></li>
+            <li>Lodge: <?php echo $_SESSION["res"]->getRoomSize();?></li>
+            <li>Number of Guests: <?php echo $_SESSION["res"]->getGuests();?></li>
+            <li>Dates Reserved: <?php echo $_SESSION["res"]->getStartDate(). " to ". $_SESSION["res"]->getEndDate(); ?></li>
+            <li>Creation: <?php echo $_SESSION["res"]->getCreation();?></li>
+        </ul>
+    </div>
     <div id="flex">
         <form method="post" action="Landing.php">
             <button type="submit" class="submit" name="submit" value="home">Home</button>
