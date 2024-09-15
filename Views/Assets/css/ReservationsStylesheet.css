@@ -1,0 +1,62 @@
+.calendar-buttons button {
+    cursor: pointer;
+    background: lightslategray;
+    border: 1px solid lightslategray;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+.calendar {
+    border-collapse: collapse;
+    width: 100%;
+}
+.calendar td, .calendar th {
+    padding: 5px;
+    border: 1px solid lightslategray;
+    text-align: center;
+    vertical-align: top;
+}
+body {
+    background-color:rgba(245, 239, 230);
+    background-size: cover;
+    padding-bottom: 150px;
+}
+h2{
+    text-decoration-color: black;
+}
+h4{
+    text-decoration-color: black;
+}
+#flex-bottomhalf {
+    background-color: rgb(79, 111, 82);
+}
+.submit:hover{
+    background-color: lightsteelblue;
+    text-decoration-color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+input[type=text], input[type=email], input[type=password]{
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 15px;
+    border-width: 1px;
+}
+.logIn {
+    background-color: rgba(245, 239, 230);
+    margin-left:auto;
+    padding: 0 5% 1% 5%;
+    margin-right: 5%;
+    width:15%;
+    text-align: center;
+}
+button{
+    background-color: lightslategray;
+    text-decoration-color: black;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    border-width: 1px;
+}
+#loginErrMsg, #regErrMsg{
+    color: red;
+}
