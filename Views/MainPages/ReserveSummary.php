@@ -17,6 +17,7 @@ if(!isset($_SESSION["res"])){
 ?>
 
 <div id="sum">
+    <?php ?>
     <h2>Your Reservation has been Confirmed!</h2>
     <h4>Reservation Summary:</h4>
     <div style="display: inline-block; text-align: center;">
@@ -33,10 +34,11 @@ if(!isset($_SESSION["res"])){
         <form method="post" action="Landing.php">
             <button type="submit" class="submit" name="submit" value="home">Home</button>
         </form>
-        <form method="post" action="[insert name of about us page here]">
+        <form method="post" action="About.php">
             <button type="submit" class="submit" name="submit" value="aboutus">About/Contact</button>
         </form>
     </div>
 </div>
 <?php
+unset($_SESSION["res"]);
 require_once "../templates/_footer.php";
