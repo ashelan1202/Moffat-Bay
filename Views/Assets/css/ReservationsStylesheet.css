@@ -1,0 +1,105 @@
+/*Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24*/
+.ui-datepicker{
+    width: 250px;
+}
+body {
+    background-color:rgba(245, 239, 230);
+    background-size: cover;
+    padding-bottom: 150px;
+}
+h2{
+    text-decoration-color: black;
+}
+h4{
+    text-decoration-color: black;
+}
+#bottomhalf {
+    background-color: rgb(79, 111, 82);
+    padding-bottom: 0;
+    margin-bottom: 0;
+    div{
+        margin-top: 10%;
+    }
+}
+.submit:hover{
+    background-color: lightsteelblue;
+    text-decoration-color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+input[type=text], input[type=email], input[type=password]{
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 15px;
+    border-width: 1px;
+}
+#logIn {
+    background-color: rgba(245, 239, 230);
+    margin-left:0;
+    padding: 0 5% 1% 5%;
+    margin-right: 5%;
+    width:15%;
+    text-align: center;
+}
+#payment-info{
+    margin-right: 0;
+    background-color: rgba(245, 239, 230);
+    width:25%;
+    h3{
+        margin-bottom: 0;
+    }
+
+}
+button{
+    background-color: lightslategray;
+    text-decoration-color: black;
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    border-width: 1px;
+}
+#loginErrMsg, #regErrMsg{
+    color: red;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+}
+#right{
+    margin-right: 0;
+    margin-left: auto;
+}
+#avail-calendar{
+    margin-left: 0;
+    margin-right: auto;
+}
+#dates-selected {
+    margin-left: 25%;
+    margin-right: 35%;
+}
+body{
+    text-align: center;
+    margin-bottom:0;
+    padding-bottom:0;
+}
+.amount{
+    background-color: rgb(79, 111, 82);
+    h3{
+        margin-top:0;
+    }
+    padding-top: 0;
+    margin-top:0;
+}
+#payment{
+    margin-top:0;
+    #cardinfo{
+        margin-top: 0;
+        padding-right: 15%;
+        border-right: solid black 1px;
+    }
+    #quickPay{
+        margin-top:0;
+        margin-right: 0;
+        width:50%;
+    }
+}
