@@ -1,0 +1,90 @@
+/*Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development*/
+body{
+    background-color: #E8DFCA;
+}
+.about-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 50px;
+    height: 600px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size:30px;
+}
+
+.dark-grey {
+    color: #333;
+}
+
+.light-grey {
+    color: #999;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 50px;
+}
+
+.about-text p {
+    max-width: 600px; /* Optional to control paragraph width */
+    line-height: 1.6;
+    font-size:25px;
+}
+.img-div {
+    flex: 1;
+}
+
+
+
+.about-img {
+    width:800px;
+    height: 600px;
+    max-height: 500px;
+}
+
+.divider {
+    height: 2px;
+    background-color: #1A4D2E;
+    width: 100%;
+}
+
+.visit-section {
+    position: relative;
+    background-image: url('../images/streets2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    color: #333;
+    display: flex;
+    justify-content: flex-end; /* Aligns the content on the right side */
+    align-items: center;
+    width: 100%;
+}
+
+.visit-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1));
+}
+
+.visit-content {
+    background-color: #E8DFCA;
+
+    height: 500px;
+    width: 450px;
+    padding: 15px 50px;
+    text-align: left;
+    z-index: 1;
+    margin-right:200px;
+    font-size: 25px;
+}
