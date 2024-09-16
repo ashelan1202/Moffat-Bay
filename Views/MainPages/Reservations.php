@@ -7,10 +7,9 @@ include $repRoot."models/CustomerInfo/Customer.php";
 include $repRoot."models/Reservation/Reservation.php";
 require_once "../templates/_header.php";
 ?>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
 
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="../Assets/css/ReservationsStylesheet.css">
 <?php
 require_once "../templates/_navbar.php";
@@ -24,16 +23,26 @@ if (isset($_SESSION["regError"])) {
 <div class="flex">
     <div id="avail-calendar">
         <h4>Select a date to view availability</h4>
-        <div id=datepicker>
-            <script>
-                $( function() {
-            $( "#datepicker" ).datepicker();
-            } );
-            </script>
-        </div>
+        <input id="calendar-selectrange" hidden="hidden">
+        <h3 id="test"></h3>
+        <script>
+            let fp = flatpickr('#calendar-selectrange',{
+                "mode": "range",
+                "inline": true,
+                onValueUpdate: [function(date, dateStr){
+                    let startDate = dateStr.slice(0,11)
+                    let endDate = dateStr.slice(15,)
+                    document.getElementById("startDate").value = startDate
+                    document.getElementById("endDate").value = endDate
+                }]
+            });
+
+
+        </script>
             <div class="guests-dropdown">
                 <label for="numofGuests">Number of Guests:</label>
                 <select name="guests" id="numofGuests" required>
+
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -49,7 +58,7 @@ if (isset($_SESSION["regError"])) {
     </div>
     <div id="dates-selected">
         <div id="middle">
-            <h3>Start Date: <input type="date" name="startDate" required></h3>
+            <h3>Start Date: <input id="startDate" type="date" name="startDate" value=" " required></h3>
             <h3>End Date: <input type="date" name="endDate" required></h3>
         </div>
     </div>
@@ -127,7 +136,7 @@ if (isset($_SESSION["regError"])) {
         <?php if(isset($_SESSION["customer"])){?>
         <button form="ReservationForm" type="submit" class="submit" name="submit" value="confirmReservation">Confirm Reservation</button><br>
         <?php }else{?>
-           <h1>Please Sign In First!</h1>
+           <h1 style="margin-bottom: 0;">Please Sign In First!</h1>
         <?php
         }?>
     </div>
