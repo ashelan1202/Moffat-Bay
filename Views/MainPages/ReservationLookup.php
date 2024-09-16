@@ -18,7 +18,7 @@ require_once "../templates/_navbar.php";
             unset($_SESSION["resLookupError"]);}
             ?></p>
     <p><input type="number" name="resId" placeholder="Confirmation Number" required></p>
-    <p><input type="email" name="email" placeholder="Email"required></p>
+    <p><input type="email" name="email" placeholder="Email" required></p>
     <p><button type="submit" name="submit">Lookup</button></p>
     </form>
 
