@@ -4,7 +4,7 @@ session_start();
 
 if(isset($_POST['submit'])) {
     $_SESSION["customer"] = new Customer();
-    if ($_POST['submit'] == "signin") {
+    if ($_POST['submit'] == "signin" or $_POST['submit'] == "ressignin") {
         $email = $_POST['email'];
         $password = $_POST['password'];
         $loggedIn = $_SESSION["customer"]->login($email, $password);
@@ -14,7 +14,11 @@ if(isset($_POST['submit'])) {
             header('Location: ../Views/MainPages/LoginRegis.php' );
             exit;
         } else{
-            header('Location: ../Views/TestPages/VerificationTest.php' );
+            if ($_POST['submit'] == "signin") {
+                header('Location: ../Views/TestPages/VerificationTest.php');
+            } else {
+                header('Location: ../Views/MainPages/Reservations.php');
+            }
         }
     } elseif ($_POST['submit'] == "signup") {
         $email = $_POST['email'];

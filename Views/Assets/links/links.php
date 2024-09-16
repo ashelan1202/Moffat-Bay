@@ -5,7 +5,7 @@ $pages = [
     "Attractions" => views."MainPages/NotImplemented.php",
     "Contact Us" => views."MainPages/NotImplemented.php",
     "About Us" => views."MainPages/NotImplemented.php",
-    "Lodge Reservations Page" => views."MainPages/NotImplemented.php",
+    "Lodge Reservations Page" => views."MainPages/Reservations.php",
     "Reservation Lookup" => views."MainPages/NotImplemented.php",
 ];
 $home = $pages["Landing Page"];

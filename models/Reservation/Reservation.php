@@ -60,4 +60,9 @@ class Reservation
     public function getCreation(){
         return $this->creation;
     }
+    public static function getPrices(){
+        $resQuery = new ReservationQuery();
+        return [$resQuery->getPrices()];
+    }
+
 }

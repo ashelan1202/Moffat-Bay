@@ -58,5 +58,18 @@ class ReservationQuery
             echo "Error: " . $e->getMessage();
             return [false];
         }
+
     }
+    public function getPrices(){
+        try{
+            $sql = "SELECT roomId,roomSize, price from rooms";
+            $result = $this->conn->query($sql);
+            return $result->fetch_all(MYSQLI_ASSOC);
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return [false];
+        }
+
+    }
+
 }
