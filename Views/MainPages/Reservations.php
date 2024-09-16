@@ -6,6 +6,7 @@ include $repRoot."models/Reservation/Reservation.php";
 require_once "../templates/_header.php";
 ?>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
     <link rel="stylesheet" href="../Assets/css/ReservationsStylesheet.css">
@@ -75,6 +76,7 @@ if (isset($_SESSION["regError"])) {
         </div>
     </div>
     </form>
+</div>
 <div class="flex" id="bottomhalf">
     <div id="logIn">
         <?php
