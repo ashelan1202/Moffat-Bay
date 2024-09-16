@@ -1,3 +1,5 @@
+<!--Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24-->
+
 <?php
 $title="Lodge Reservation Summary Page";
 $repRoot="../../";
@@ -30,9 +32,6 @@ if(!isset($_SESSION["res"])){
     <div id="flex">
         <form method="post" action="Landing.php">
             <button type="submit" class="submit" name="submit" value="home">Home</button>
-        </form>
-        <form method="post" action="LoginRegis.php">
-            <button type="submit" class="submit" name="submit" value="login">Login</button>
         </form>
         <form method="post" action="[insert name of about us page here]">
             <button type="submit" class="submit" name="submit" value="aboutus">About/Contact</button>

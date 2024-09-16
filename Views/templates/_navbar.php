@@ -1,3 +1,4 @@
+<!--Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24-->
 <?php
 define("links", $repRoot . "Views/Assets/links/");
 define("images", $repRoot . "Views/Assets/images/");

@@ -1,3 +1,5 @@
+<!--Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24-->
+
 <?php
 $title="Login/Registration Page";
 $repRoot="../../";

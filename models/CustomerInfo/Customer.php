@@ -1,3 +1,5 @@
+<!--Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24-->
+
 <?php
 include "CustomerQuery.php";
 class Customer
