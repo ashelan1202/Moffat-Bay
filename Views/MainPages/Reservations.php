@@ -77,7 +77,7 @@ if (isset($_SESSION["regError"])) {
 
                             <?php foreach($prices as $price){?>
                         <tr>
-                            <td><input type="radio" id="room<?php echo $price["roomId"]?>" name="lodgeId" onclick="getPrice(<?php echo $price["price"]?>)" value="<?php echo $price["roomId"]?>"><?php echo $price["roomSize"]; ?></td>
+                            <td><input type="radio" id="room<?php echo $price["roomId"]?>" name="lodgeId" onclick="getPrice(<?php echo $price["price"]?>)" value="<?php echo $price["roomId"]?>" required><?php echo $price["roomSize"]; ?></td>
                                 <td><?php echo $price["price"]?></td>
                         </tr>
                             <?php }
