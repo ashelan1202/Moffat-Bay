@@ -23,9 +23,12 @@ require links."links.php";
     </div>
     <div class="links">
         <?php
+        if(isset($_SESSION["customer"])){
+            unset($pages["Login/Registration Page"]);
+        }
         foreach($pages as $key => $value){
             if($key != $title){
-                echo "<a class=\"link\" href=\"".$value."\"><h2>".$key."</h2></a><br>";
+                    echo "<a class=\"link\" href=\"" . $value . "\"><h2>" . $key . "</h2></a><br>";
             }
         }
         if(isset($_SESSION['customer'])){
