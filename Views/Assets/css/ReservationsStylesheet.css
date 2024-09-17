@@ -1,7 +1,5 @@
 /*Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24*/
-.ui-datepicker{
-    width: 250px;
-}
+
 body {
     background-color:rgba(245, 239, 230);
     background-size: cover;
@@ -70,7 +68,7 @@ button{
     margin-left: auto;
 }
 #avail-calendar{
-    margin-left: 0;
+    margin-left: 5%;
     margin-right: auto;
 }
 #dates-selected {
@@ -81,6 +79,12 @@ body{
     text-align: center;
     margin-bottom:0;
     padding-bottom:0;
+}
+#avail-list{
+    margin-right: 10%;
+    margin-left: auto;
+    justify-content: center;
+    align-items: center;
 }
 .amount{
     background-color: rgb(79, 111, 82);
@@ -102,4 +106,11 @@ body{
         margin-right: 0;
         width:50%;
     }
+}
+table, tr{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.inputName{
+    display:flex;
 }

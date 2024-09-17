@@ -1,0 +1,46 @@
+/*Ashley Landin, Samuel Segars, Rogelio Orozco, CSD460 Capstone in Software Development, 09-15-24*/
+body {
+    background-image: url("../images/lodgelake.jpeg");
+    background-size: cover;
+    padding-bottom: 150px;
+    text-align: center;
+}
+#resLookup{
+    background-color: #E8DFCA;
+    width: 25%;
+    padding: 1% 5% 3% 5%;
+    text-align: center;
+    margin: 10% auto;
+    justify-content: center;
+}
+h1{
+   color: #47525E;
+
+}
+h3{
+    color: grey;
+    font-size: 23px;
+}
+input{
+    border-radius: 10px;
+    width: 307px;
+    height: 54px;
+    font-size: 30px;
+}
+button{
+    background-color: lightslategray;
+    color: white;
+    border-radius: 10px;
+    width: 307px;
+    height: 54px;
+    border-width: 1px;
+    text-align: center;
+    justify-content: center;
+
+}
+button[type=submit]:hover{
+    background-color: lightsteelblue;
+    text-decoration-color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}

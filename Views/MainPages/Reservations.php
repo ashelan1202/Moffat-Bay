@@ -5,6 +5,7 @@ $title="Lodge Reservations Page";
 $repRoot="../../";
 include $repRoot."models/CustomerInfo/Customer.php";
 include $repRoot."models/Reservation/Reservation.php";
+$rooms = Reservation::getPrices();
 require_once "../templates/_header.php";
 ?>
 
@@ -24,16 +25,18 @@ if (isset($_SESSION["regError"])) {
     <div id="avail-calendar">
         <h4>Select a date to view availability</h4>
         <input id="calendar-selectrange" hidden="hidden">
-        <h3 id="test"></h3>
         <script>
             let fp = flatpickr('#calendar-selectrange',{
                 "mode": "range",
                 "inline": true,
                 onValueUpdate: [function(date, dateStr){
-                    let startDate = dateStr.slice(0,11)
-                    let endDate = dateStr.slice(15,)
-                    document.getElementById("startDate").value = startDate
-                    document.getElementById("endDate").value = endDate
+                    let startDate = dateStr;
+                    startDate = startDate.slice(0,10);
+                    let endDate = dateStr.slice(14,25);
+                    document.getElementById("startDate").value = startDate;
+                    document.getElementById("endDate").value = endDate;
+                    getPrice();
+
                 }]
             });
 
@@ -58,8 +61,8 @@ if (isset($_SESSION["regError"])) {
     </div>
     <div id="dates-selected">
         <div id="middle">
-            <h3>Start Date: <input id="startDate" type="date" name="startDate" value=" " required></h3>
-            <h3>End Date: <input type="date" name="endDate" required></h3>
+            <h3>Start Date: <input id="startDate" type="date" name="startDate" readonly required></h3>
+            <h3>End Date: <input type="date" id="endDate" name="endDate" readonly required></h3>
         </div>
     </div>
     <div id="avail-list">
@@ -73,11 +76,11 @@ if (isset($_SESSION["regError"])) {
                 </thead>
                 <tbody id="avail-rooms"></tbody>
                 <?php
-                foreach(Reservation::getPrices() as $prices){?>
+                foreach($rooms as $prices){?>
 
                             <?php foreach($prices as $price){?>
                         <tr>
-                            <td><input type="radio" id="room<?php echo $price["roomId"]?>" name="lodgeId" onclick="getPrice(<?php echo $price["price"]?>)" value="<?php echo $price["roomId"]?>" required><?php echo $price["roomSize"]; ?></td>
+                            <td class="inputName"><input type="radio" id="room<?php echo $price["roomId"]?>" name="lodgeId" onclick="getPrice()"  value="<?php echo $price["roomId"]?>" required><label><?php echo $price["roomSize"]; ?></label></td>
                                 <td><?php echo $price["price"]?></td>
                         </tr>
                             <?php }
@@ -132,7 +135,7 @@ if (isset($_SESSION["regError"])) {
 
 </div>
     <div class="amount">
-        <h3 id="amountOwed">Amount Owed $<a id="price">155</a></h3>
+        <h3 id="amountOwed">Please Select A Room Size and Dates</h3>
         <?php if(isset($_SESSION["customer"])){?>
         <button form="ReservationForm" type="submit" class="submit" name="submit" value="confirmReservation">Confirm Reservation</button><br>
         <?php }else{?>
@@ -141,13 +144,29 @@ if (isset($_SESSION["regError"])) {
         }?>
     </div>
 <script>
-    function getPrice(price) {
-        document.getElementById("price").innerHTML = price;
+    function getPrice() {
+        let startDate = document.getElementById("startDate");
+        let endDate = document.getElementById("endDate");
+        let radio = document.querySelector('input[type="radio"]:checked');
+        if(startDate.value !== "" && endDate.value !== "" && radio !== null) {
+            let roomPrices = new Map([<?php foreach ($rooms[0] as $prices){echo '["'. $prices["roomId"].'","'. $prices["price"].'"],';}?>]);
+            let price = roomPrices.get(radio.value);
+            console.log(price);
+           price = (dateDiffInDays(new Date(startDate.value), new Date(endDate.value))) * price;
+
+            document.getElementById("amountOwed").innerHTML = "Amount Owed $" + price;
+        }
+        }
+
+        //Function Provided by Shyam Habarakada and Edited by João Pimentel Ferreira on Stack Overflow
+    function dateDiffInDays(a, b) {
+        const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+
+        const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+        const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+
+        return Math.floor((utc2 - utc1) / _MS_PER_DAY);
     }
-    $(document).ready (function() {
-        let radiobtn = document.getElementById("room1");
-        radiobtn.checked = true;
-    })
 </script>
 <?php
 
