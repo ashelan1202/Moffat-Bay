@@ -13,7 +13,7 @@ class ReservationQuery
     {
         $this->username = "root";
         $this->password = "root";
-        $this->host = "localhost";
+        $this->host = "127.0.0.1";
         $this->database = "moffatbay";
         $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
     }
