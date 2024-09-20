@@ -8,7 +8,7 @@ class CustomerQuery{
     public function __construct(){
         $this->username = "root";
         $this->password = "root";
-        $this->host = "localhost";
+        $this->host = "127.0.0.1";
         $this->database = "moffatbay";
     }
 
