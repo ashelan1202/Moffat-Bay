@@ -18,6 +18,9 @@ require_once "../templates/_navbar.php";
     <div class="container2">
         <h2>About Us</h2>
         <p> The Moffat Bay Lodge is the  best place to stay to embark on adventures your family is sure to remember. Our staff is always on stand-by to provide best in class hospitality and help ensure your stay is one for the books.</p>
+        <div class="fishbowl">
+            <img src="<?= images ?>SalishSalmon1.webp" alt="Salmon Image" class="salmon-image">
+        </div>
         <a href="<?php echo $pages["Lodge Reservations Page"]?>" class="btn">Book Today</a>
     </div>
 
