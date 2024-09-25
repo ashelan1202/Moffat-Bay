@@ -24,30 +24,10 @@
 }
 .section-text{
     margin-top: 5%;
-    width: 15%;
+    width: 27%;
     margin-left: 0;
 }
-/*ids*/
-#attractions-img{
-    background: url("../images/diving.jpg") no-repeat;
-    background-size: 100% 100%;
-}
-#scuba-image{
-    background: url("../images/diving.jpg") no-repeat;
-    background-size: 100% 100%;
-}
-#whaleWatching-image{
-    background: url("../images/whale_rsz.jpg") no-repeat;
-    background-size: 100% 100%;
-}
-#kayaking-image{
-    background: url("../images/kayak_rsz.jpg") no-repeat;
-    background-size: 100% 100%;
-}
-#hiking-image{
-    background: url("../images/hiking_rsz.jpg") no-repeat;
-    background-size: 100% 100%;
-}
+
 
 
 

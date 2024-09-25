@@ -12,7 +12,9 @@ require_once "../templates/_navbar.php";
 <div id="page">
 
     <div class="green flex section">
-        <div class="section-img" id="attractions-img"></div>
+        <div class="section-img">
+            <img src="<?= images ?>mofat_killers.jpg" alt="Killer whales, lighthouse on coastline" width="100%" >
+        </div>
         <div class="section-text">
             <h1>Attractions</h1>
             <h3>Moffat Bay Lodge invites guests to explore a variety of local attractions.</h3>
@@ -24,7 +26,9 @@ require_once "../templates/_navbar.php";
     </div>
 
     <div class="tan flex section">
-        <div class="section-img" id="scuba-image"></div>
+        <div class="section-img">
+            <img src="<?= images ?>mofat_scuba.jpg" alt="Scuba diver above coral structure" width="100%" >
+        </div>
         <div class="section-text">
             <h1>Scuba Diving</h1>
             <h3>Explore the underwater world with scuba diving! Plunge into crystal-clear waters, navigate coral reefs, and meet the resident marine life for an adventure like no other.</h3>
@@ -34,7 +38,10 @@ require_once "../templates/_navbar.php";
     </div>
 
     <div class="green flex section">
-        <div class="section-img" id="whaleWatching-image"></div>
+        <div class="section-img">
+            <img src="<?= images ?>mofat_whale.jpg" alt="Whale tail fin breaks water by small boat" width="100%" >
+
+        </div>
         <div class="section-text">
             <h1>Whale Watching</h1>
             <h3>Embark on an unforgettable whale watching voyage at the nearby Moffat Bay Marina.</h3>
@@ -44,7 +51,9 @@ require_once "../templates/_navbar.php";
     </div>
 
     <div class="tan flex section">
-        <div class="section-img" id="kayaking-image"></div>
+        <div class="section-img">
+            <img src="<?= images ?>mofat_kayak.jpg" alt="Women on 2-person kayak in front of coastline, sunny day" width="100%" >
+        </div>
         <div class="section-text">
             <h1>Kayaking</h1>
             <h3>Paddle through the calm waters to explore Moffat Bay's secluded coves, lush shoreline and diverse marine life. Kayaking at Moffat Bay offers the perfect blend of peaceful escape and exploration.</h3>
@@ -53,7 +62,10 @@ require_once "../templates/_navbar.php";
     </div>
 
     <div class="green flex section">
-        <div class="section-img" id="hiking-image"></div>
+        <div class="section-img">
+            <img src="<?= images ?>mofat_hiking1.jpg" alt="Hikers on overlook - cloudtopped mountains, rivulet valley, sprawling forest" width="100%" >
+
+        </div>
         <div class="section-text">
             <h1>Hiking</h1>
             <h3>Encounter the untamed beauty of Joviedsa Island with our guided hiking adventure at Moffat Bay Lodge.</h3>
