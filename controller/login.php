@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
             exit;
         } else{
             if ($_POST['submit'] == "signin") {
-                header('Location: ../Views/TestPages/VerificationTest.php');
+                header('Location: ../Views/MainPages/Landing.php');
             } else {
                 header('Location: ../Views/MainPages/Reservations.php');
             }
@@ -31,7 +31,7 @@ if(isset($_POST['submit'])) {
             unset($_SESSION["customer"]);
             header('Location: ../Views/MainPages/LoginRegis.php' );
         } else{
-            header('Location: ../Views/TestPages/VerificationTest.php' );
+            header('Location: ../Views/MainPages/Landing.php' );
         }
 
     }
