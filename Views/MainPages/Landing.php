@@ -29,7 +29,7 @@ require_once "../templates/_navbar.php";
         <div class="card-container">
 
             <div class="card">
-                <a href="<?php echo $pages["Attractions"]?>">
+                <a href="<?php echo $pages["Attractions"]?>#hike">
                 <div class="image-crop">
                     <img src="<?= images ?>hiking_rsz.jpg" alt="Hiking">
                 </div>
@@ -38,7 +38,7 @@ require_once "../templates/_navbar.php";
             </div>
 
             <div class="card">
-                <a href="<?php echo $pages["Attractions"]?>">
+                <a href="<?php echo $pages["Attractions"]?>#whales">
                 <div class="image-crop">
                     <img src="<?= images ?>whale_rsz.jpg" alt="Whale Watching">
                 </div>
@@ -46,7 +46,7 @@ require_once "../templates/_navbar.php";
                 </a>
             </div>
             <div class="card">
-                <a href="<?php echo $pages["Attractions"]?>">
+                <a href="<?php echo $pages["Attractions"]?>#scuba">
                 <div class="image-crop">
                     <img src="<?= images ?>diving.jpg" alt="Scuba Diving">
                 </div>
@@ -54,7 +54,7 @@ require_once "../templates/_navbar.php";
                 </a>
             </div>
             <div class="card">
-                <a href="<?php echo $pages["Attractions"]?>">
+                <a href="<?php echo $pages["Attractions"]?>#kayak">
                 <div class="image-crop">
                     <img src="<?= images ?>kayak_rsz.jpg" alt="Kayaking">
                 </div>

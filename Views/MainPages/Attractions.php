@@ -25,7 +25,7 @@ require_once "../templates/_navbar.php";
         </div>
     </div>
 
-    <div class="tan flex section">
+    <div class="tan flex section" id="scuba">
         <div class="section-img">
             <img src="<?= images ?>mofat_scuba.jpg" alt="Scuba diver above coral structure" width="100%" >
         </div>
@@ -37,7 +37,7 @@ require_once "../templates/_navbar.php";
         </div>
     </div>
 
-    <div class="green flex section">
+    <div class="green flex section" id="whales">
         <div class="section-img">
             <img src="<?= images ?>mofat_whale.jpg" alt="Whale tail fin breaks water by small boat" width="100%" >
 
@@ -50,7 +50,7 @@ require_once "../templates/_navbar.php";
         </div>
     </div>
 
-    <div class="tan flex section">
+    <div class="tan flex section" id="kayak">
         <div class="section-img">
             <img src="<?= images ?>mofat_kayak.jpg" alt="Women on 2-person kayak in front of coastline, sunny day" width="100%" >
         </div>
@@ -61,7 +61,7 @@ require_once "../templates/_navbar.php";
         </div>
     </div>
 
-    <div class="green flex section">
+    <div class="green flex section" id="hike">
         <div class="section-img">
             <img src="<?= images ?>mofat_hiking1.jpg" alt="Hikers on overlook - cloudtopped mountains, rivulet valley, sprawling forest" width="100%" >
 
