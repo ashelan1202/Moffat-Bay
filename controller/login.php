@@ -29,7 +29,7 @@ if(isset($_POST['submit'])) {
         if (!$register[0]) {
             $_SESSION["regError"] = $register[1];
             unset($_SESSION["customer"]);
-            header('Location: ../Views/MainPages/LoginRegis.php' );
+            header('Location: ../Views/MainPages/registration.php' );
         } else{
             header('Location: ../Views/MainPages/Landing.php' );
         }

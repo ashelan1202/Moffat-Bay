@@ -97,7 +97,7 @@ if (isset($_SESSION["regError"])) {
         if (!isset($_SESSION["customer"])) {?>
         <h3>Login</h3>
         <h4>Login to finalize reservation</h4>
-        <h4>Don't have an account with us? Click here to sign up!</h4>
+
         <p id="loginErrMsg"><?php if(isset($_SESSION["loginError"])){
                 echo $_SESSION["loginError"];
                 unset($_SESSION["loginError"]);
@@ -106,7 +106,9 @@ if (isset($_SESSION["regError"])) {
             <input type="email" id="email" name="email" placeholder="Email" required><br>
             <input type="password" id="password" name="password" placeholder="Password" required><br>
             <button type="submit" class="submit" name="submit" value="ressignin">Sign In</button><br>
-        </form><?php }else{
+        </form>
+            <h4><a href="registration.php" style="color: black; text-decoration: none">Don't have an account with us? Click here to sign up!</a></h4>
+        <?php }else{
         ?>
             <h3>You are currently logged in!</h3>
             <p> User: <?php echo $_SESSION["customer"]->getName();?></p>
