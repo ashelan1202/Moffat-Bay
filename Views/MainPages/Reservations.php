@@ -20,7 +20,7 @@ if (isset($_SESSION["regError"])) {
 ?>
 <h2>Book a Reservation with Us!</h2>
 
-    <form id="ReservationForm" method="POST" action="../../controller/createReservation.php">
+<form id="ReservationForm" method="POST" action="../../controller/createReservation.php">
 <div class="flex">
     <div id="avail-calendar">
         <h4>Select a date to view availability</h4>
@@ -59,13 +59,13 @@ if (isset($_SESSION["regError"])) {
                 </select>
             </div>
     </div>
+
     <div id="dates-selected">
         <div id="middle">
             <h3>Start Date: <input id="startDate" type="date" name="startDate" readonly required></h3>
             <h3>End Date: <input type="date" id="endDate" name="endDate" readonly required></h3>
         </div>
-    </div>
-    <div id="avail-list">
+        <div id="avail-list">
         <div id="right">
             <table class="availabilities" id="availabilities">
                 <thead>
@@ -89,8 +89,42 @@ if (isset($_SESSION["regError"])) {
             </table>
         </div>
     </div>
+
+    </div>
+    
     </form>
+
+    <div id="payment-info">
+        <h3>Payment Details</h3>
+        <div id="payment" class="flex">
+        <div id="cardinfo">
+        <input type="text" id="name" name="name" placeholder="Name of Cardholder" disabled><br>
+        <input type="text" id="cardNo" name="cardNo" placeholder="Card Number" disabled><br>
+        <input type="text" id="expDate" name="expDate" placeholder="Expiration Date" disabled><br>
+        <input type="text" id="cvv" name="cvv" placeholder="CVV" disabled><br>
+        <input type="text" id="zip" name="zip" placeholder="ZIP Code" disabled><br>
+        </div>
+        <div id="quickPay">
+        <button type="button" name="paypal" value="paypal">PayPal </button><br>
+        <button type="button" name="venmo" value="venmo">Venmo</button><br>
+        <button type="button" name="google" value="google">Google Pay</button><br>
+        <button type="button" name="apple" value="apple">Apple Pay</button><br>
+        </div>
+        </div>
+    </div>
+    
+
 </div>
+<div class="amount">
+        <h3 id="amountOwed">Please Select A Room Size and Dates</h3>
+        <?php if(isset($_SESSION["customer"])){?>
+        <button form="ReservationForm" type="submit" class="submit" name="submit" value="confirmReservation">Confirm Reservation</button><br>
+        <?php }else{?>
+           <h1 style="margin-bottom: 0;">Please Sign In First!</h1>
+        <?php
+        }?>
+    </div>
+    
 <div class="flex" id="bottomhalf">
     <div id="logIn">
         <?php
@@ -116,35 +150,10 @@ if (isset($_SESSION["regError"])) {
         }?>
     </div>
 
-    <div id="payment-info">
-        <h3>Payment Details</h3>
-        <div id="payment" class="flex">
-        <div id="cardinfo">
-        <input type="text" id="name" name="name" placeholder="Name of Cardholder" disabled><br>
-        <input type="text" id="cardNo" name="cardNo" placeholder="Card Number" disabled><br>
-        <input type="text" id="expDate" name="expDate" placeholder="Expiration Date" disabled><br>
-        <input type="text" id="cvv" name="cvv" placeholder="CVV" disabled><br>
-        <input type="text" id="zip" name="zip" placeholder="ZIP Code" disabled><br>
-        </div>
-        <div id="quickPay">
-        <button type="button" name="paypal" value="paypal">PayPal </button><br>
-        <button type="button" name="venmo" value="venmo">Venmo</button><br>
-        <button type="button" name="google" value="google">Google Pay</button><br>
-        <button type="button" name="apple" value="apple">Apple Pay</button><br>
-        </div>
-        </div>
-    </div>
+    
 
 </div>
-    <div class="amount">
-        <h3 id="amountOwed">Please Select A Room Size and Dates</h3>
-        <?php if(isset($_SESSION["customer"])){?>
-        <button form="ReservationForm" type="submit" class="submit" name="submit" value="confirmReservation">Confirm Reservation</button><br>
-        <?php }else{?>
-           <h1 style="margin-bottom: 0;">Please Sign In First!</h1>
-        <?php
-        }?>
-    </div>
+    
 <script>
     function getPrice() {
         let startDate = document.getElementById("startDate");
